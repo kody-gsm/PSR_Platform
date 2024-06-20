@@ -12,6 +12,7 @@ import {
   WebGPUEngine
 } from 'react-babylonjs'
 import { Vector3, Color3 } from '@babylonjs/core';
+import './style.scss'
 
 const DefaultScale = new Vector3(1, 1, 1)
 const BiggerScale = new Vector3(1.25, 1.25, 1.25)
