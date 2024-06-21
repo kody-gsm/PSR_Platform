@@ -9,6 +9,7 @@ import {
   useBeforeRender,
   useClick,
   useHover,
+  useScene,
   WebGPUEngine
 } from 'react-babylonjs'
 import { Vector3, Color3 } from '@babylonjs/core';
@@ -59,16 +60,27 @@ const SpinningBox = (props: any) => {
   )
 }
 
-const SceneWithSpinningBoxes = () => (
-  <div>
+const SceneWithSpinningBoxes = () => {
+  const scene = useScene();
+  useBeforeRender(() => {
+    if (scene) {
+
+    }
+  })
+  return <div>
     <WebGPUEngine canvasId="babylonJS">
-      <Scene>
-        <arcRotateCamera
+      <Scene >
+        {/* <arcRotateCamera
           name="camera1"
           target={Vector3.Zero()}
           alpha={Math.PI / 2}
           beta={Math.PI / 4}
           radius={8}
+        /> */}
+        <freeCamera
+          name='freecam'
+          position={new Vector3(0, 5, -10)}
+          setTarget={[Vector3.Zero()]}
         />
         <hemisphericLight
           name="light1"
@@ -90,6 +102,6 @@ const SceneWithSpinningBoxes = () => (
       </Scene>
     </WebGPUEngine>
   </div>
-)
+}
 
 export default SceneWithSpinningBoxes;
