@@ -69,14 +69,7 @@ const SceneWithSpinningBoxes = () => {
   })
   return <div>
     <WebGPUEngine canvasId="babylonJS">
-      <Scene >
-        {/* <arcRotateCamera
-          name="camera1"
-          target={Vector3.Zero()}
-          alpha={Math.PI / 2}
-          beta={Math.PI / 4}
-          radius={8}
-        /> */}
+      <Scene>
         <freeCamera
           name='freecam'
           position={new Vector3(0, 5, -10)}
